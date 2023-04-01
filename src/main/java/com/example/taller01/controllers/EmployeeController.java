@@ -84,12 +84,11 @@ public class EmployeeController {
         String time = Calendar.getInstance().getTime().toString();
         model.addAttribute("time",time);
 
-        if(employeeData.getRol() != "employee") {
+        if(!employeeData.getRol().equals("employee")) {
             model.addAttribute("employees", employees);
             return "home-admin";
         } else {
             return "home";
         }
     }
-
 }
